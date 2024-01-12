@@ -67,9 +67,7 @@ def check_guess(board, enemies, guess_row, guess_col):
             amount_of_attempts -= 1
     return None
 
-if amount_of_attempts-1 == 0:
-        print("You are out of ammo. End of the game, loser.")
-        game_over=True
+
 
 
 
@@ -88,10 +86,25 @@ while not game_over:
             print(respond)
             game_over = True  # Set game_over flag to True when the player wins
             break  # Break out of the loop after a successful guess
-        elif amount_of_attempts-1 == 0:
-            print("You are out of ammo. End of the game, loser.")
-            game_over=True
-            break 
+        elif amount_of_attempts - 1 == 0:
+            print("You are out of ammo. End of the game, loser. Wanna play again?")
+            game_over = True
+            '''
+            while True:
+                a = input('1 - Yes; 2 - No: ')
+                if a == '1':
+                    break  # Exit the loop and continue the game
+                elif a == '2':
+                    game_over = True
+                    break  # Exit the loop and end the game
+                else:
+                    print('Error. You provided the wrong type of data')
+                    game_over=True
+                    break
+            '''
+
+if game_over:
+    print('Game Over!')
     if game_over:
         print('Game Over!')
 #seabattle game
